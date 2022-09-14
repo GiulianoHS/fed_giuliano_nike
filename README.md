@@ -16,13 +16,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Auteur:
-  Sanne 't Hooft (vervangen door jouw naam)
+  Giuliano van Hezel
 
   #### Je startniveau:
-  hier je startniveau (kies uit zwart, rood óf blauw)
+  Zwart
 
   #### Je focus:
-  hier je focus (kies uit responsive óf surface plane)
+  Responsive
  
 </details>
 
@@ -36,15 +36,15 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  link naar de website die je gaat namaken óf de naam/omschrijving van je eigen ontwerp
+  Link naar [website van Nike](https://www.nike.com/nl/).
 
-  #### Screenshot(s) van de eerste pagina (small screen): 
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  #### Screenshot(s) van de eerste pagina (small screen):
+  <img src="readme-images/nike-home-small.png" width="375px" alt="homepagina van nike">
 
   #### Screenshot(s) van de tweede pagina (small screen):
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  Nike product pagina schoen. Link naar de pagina [productpagina](https://www.nike.com/nl/t/air-zoom-alphafly-next-2-wedstrijdschoenen-heren-JrCvJQ/DN3555-800).
+
+  <img src="readme-images/nike-product-page-small.png" width="375px" alt="product pagina van schoen">
  
 </details>
 
