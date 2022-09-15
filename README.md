@@ -59,27 +59,28 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Lijst met je bevindingen die in de test naar voren kwamen:
 
   #### Screenreader
-  Hier korte omschrijving (met indien nodig afbeeldingen)
+  1e heading zegt eigenlijk heel weinig over wat het inhoud eigenlijk. Mist een beschrijving van de heading. Wat is de inhoud?
 
-  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  Gear up heading zegt dat hij een list heeft met daarin de inhoud. Bij heading level 4 mis je de beschrijving van hoe het 
+  product eruit ziet (kleur, stijl). Wanneer je op een maat staat die niet beschikbaar is dan wordt dit niet verteld, maar enkel 
+  de maat. Er is geen darkmode.
 
 
   #### Muis en Toetsenbord 
-  Hier korte omschrijving (met indien nodig afbeeldingen)
-
-  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  Tabs werken prima. Overal ga je prima langs. Dit geldt ook voor de productie pagina.
 
 
   #### Motoriek (shocks, elastiekjes)
-  Hier korte omschrijving (met indien nodig afbeeldingen)
+  "ioppoygll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,," Hier probeerde ik iets te typen. Zoals je kan zien kon ik niet eens normaal aantekeningen maken. Op de website van Nike klik je overal dubbel op. Zonder dat je het wilt klik je door op links, afbeeldingen etc. Geen ruimte voor vergevingsgezindheid.
 
-  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+
+  Je zou het wellicht kunnen oplossen met behulp van spraak. Dat je op met behulp van je stem kan navigeren of dat je in combinatie met het toetsenbord en muis dingen kan klikken. Dus niet meer doormiddel van 1 klik.
 
 
   #### Visueel (brillen, contrast, kleurenblind, dark/light). 
-  Hier korte omschrijving (met indien nodig afbeeldingen)
+  Blurred. Aardig goed te zien, maar het wordt zichtbaarder wanneer het groter wordt. Over de combined loss is het moeilijk te zien wanneer tekst heel klein zijn. Wat eigenlijk voor allen geld.
 
-  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  Voor central field loss zou je misschien de website visuel kunnen splitten zodat je niet constant je hoofd hoeft te draaien. Peripheral field loss zou je ervoor kunnen zorgen dat de website veel smaller is, maar nog steeds visueel leesbaar. 
 
 </details>
 
