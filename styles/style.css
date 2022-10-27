@@ -9,7 +9,7 @@ button, summary {
 	cursor: pointer;
 }
 
-
+--var
 
 
 
@@ -20,10 +20,12 @@ button, summary {
 	/* startje */
 	--color-text:#111;
 	--color-background:#eee;
+    --color-white: #fff;
 }
 
+.white-button {
 
-
+}
 
 
 /****************/
@@ -33,7 +35,250 @@ button, summary {
 /* jouw code */
 
 body {
-  color:var(--color-text);
-  background-color:var(--color-background);
+    color:var(--color-text);
+    background-color:var(--color-background);
+    margin: 0;
 }
 
+nav {
+    background-color: blue;
+    margin: 0;
+    padding: 0;
+    height: 68px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    width: 100%;
+    margin: 0;
+    padding: 1em;
+    height: auto;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+nav ul li:first-of-type {
+    margin-right: auto;
+    height: 20px;
+}
+
+nav ul li:nth-of-type(1) img {
+    height: 100%;
+}
+
+nav ul li a {
+    width: 40px;
+    height: 40px;
+    background-color: green;
+    display: block;
+}
+
+nav ul li button {
+    height: 40px;
+    width: 40px;
+}
+
+header section {
+    height: 68px;
+    background-color: red;
+    display: flex;
+}
+
+header section ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header section ul li {
+    list-style: none;
+    text-align: center;
+}
+
+header section ul li p {
+    font-size: 16px;
+    line-height: 0;
+}
+
+header section ul li a {
+    font-size: 12px;
+}
+
+main {
+    padding: 1em;
+}
+
+main section:first-of-type {
+    background: gray;
+    width: 100%;
+    min-height: 480px;
+    padding: 1em;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex: wrap;
+}
+
+main section:first-of-type h2 {
+    padding: 0;
+    margin: 0;
+}
+
+main section:first-of-type h3 {
+    order: -1;
+    margin: 0;
+}
+
+main section:first-of-type ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+}
+
+main section:first-of-type button {
+    width: fit-content;
+}
+
+main section:nth-of-type(2) {
+    /*position: relative;*/
+    /*outline:none;*/
+}
+
+main section:nth-of-type(2) ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 1em;
+    scroll-snap-type: inline mandatory;
+    scroll-behavior: smooth;
+    overflow: scroll;
+}
+
+main section:nth-of-type(2) ul li {
+    /*flex-basis: 80%;*/
+    flex-shrink: 0;
+    /*scroll-snap-align: center;*/
+}
+
+/*main section:nth-of-type(2) ul li:first-of-type{*/
+/*    height: 300px;*/
+/*}*/
+
+main section:nth-of-type(2) ul li img {
+    display: block;
+    width: auto;
+    max-height: 400px;
+}
+
+main section:nth-of-type(3) {
+    display: flex;
+    flex-direction: column;
+}
+
+main section:nth-of-type(3) h2 {
+    display: flex;
+    flex-direction: column;
+    order: 0;
+}
+
+main section:nth-of-type(3) h3 {
+    order: 4;
+}
+
+main section:nth-of-type(3) p {
+    order: 3;
+}
+
+main section:nth-of-type(3) button {
+    width: fit-content;
+    order: 5;
+}
+
+main section:nth-of-type(3) img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 40vh;
+    order: 1;
+}
+
+main section:nth-of-type(4) ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+main section:nth-of-type(4) ul li {
+    width: 100%;
+    min-height: 480px;
+    padding: 1em;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    background-image: url("../images/app_pic_woman.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+main section:nth-of-type(4) ul li:nth-of-type(2) {
+    background-image: url("../images/woman-running-with-app.jpg");
+}
+
+main section:nth-of-type(4) ul li button {
+    width: fit-content;
+}
+
+main section:nth-of-type(5) ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+main section:nth-of-type(5) ul li:first-of-type {
+    background-image: url("../images/run-app-girl-with-jacket.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+main section:nth-of-type(5) ul li button {
+    width: fit-content;
+}
+
+footer section:nth-of-type(1) {
+    padding: 1em;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer section:nth-of-type(1) ul {
+    /*padding: 1em;*/
+}
+
+footer section:nth-of-type(2) {
+    padding: 1em;
+    background: black;
+}
