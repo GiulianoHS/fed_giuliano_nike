@@ -9,10 +9,6 @@ button, summary {
 	cursor: pointer;
 }
 
---var
-
-
-
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
@@ -21,12 +17,103 @@ button, summary {
 	--color-text:#111;
 	--color-background:#eee;
     --color-white: #fff;
+
+    --primary: white;
+    --headerBg: #D9D9D9;
+    --textColor: #0e0f0f;
+    --bg: #ffffff;
+
+    /*testing dark*/
+    --color-mode: 'light';
+    --color-dark: #141414;
+    --color-dark-alpha: rgba(0, 0, 0, 0.1);
+    --color-light: #efefef;
+    --color-light-alpha: rgba(255, 255, 255, 0.9);
+    --background: #efefef;
+    --text-color: #141414;
+    --button-background: var(--color-dark);
+    --button-color: var(--color-light);
+    --border-color: var(--color-dark-alpha);
+}
+
+@media (prefers-color-scheme: light) {
+    /*light mode*/
+}
+
+@media (prefers-color-scheme: no-preference) {
+
 }
 
 .white-button {
-
+    font-size: clamp();
 }
 
+/*.visually-hidden {*/
+/*    display: block;*/
+/*    height: 1px;*/
+/*    width: 1px;*/
+/*    overflow: hidden;*/
+/*    clip: rect(1px 1px 1px 1px);*/
+/*    clip: rect(1px, 1px, 1px, 1px);*/
+/*    clip-path: inset(1px);*/
+/*    white-space: nowrap;*/
+/*    position: absolute;*/
+/*}*/
+
+/*Dark scheme*/
+
+@media (prefers-color-scheme: dark) {
+    /*dark mode*/
+    :root {
+        --color-mode: 'dark';
+        --primary: black;
+        --headerBg: #0A0908;
+        --textColor: #EAE0D5;
+        --bg: #000000;
+    }
+
+    :root:not([data-user-color-scheme]) {
+        --background: var(--color-dark);
+        --text-color: var(--color-light);
+        --button-background: var(--color-light);
+        --button-color: var(--color-dark);
+        --border-color: var(--color-light-alpha);
+    }
+}
+
+[data-user-color-scheme='dark'] {
+    --background: var(--color-dark);
+    --text-color: var(--color-light);
+    --button-background: var(--color-light-alpha);
+    --button-color: var(--color-dark);
+    --border-color: var(--color-light-alpha);
+}
+
+.no-js .user-toggle {
+    display: none;
+}
+
+.user-toggle {
+    margin: 2rem auto 0 auto;
+    padding-top: 2.5rem;
+    max-width: 20rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.toggle-button {
+    /*display: inline-flex;*/
+    background: var(--button-background);
+    color: var(--button-color);
+    border: none;
+    font: inherit;
+    /*font-size: 1.5rem;*/
+    /*padding: 0.5rem 1rem;*/
+    transition: background 500ms ease-in-out, color 200ms ease;
+    width: fit-content;
+}
+
+/*Tokens*/
 
 /****************/
 /* JOUW STYLING */
@@ -35,13 +122,16 @@ button, summary {
 /* jouw code */
 
 body {
-    color:var(--color-text);
-    background-color:var(--color-background);
     margin: 0;
+    background: var(--background);
+    color: var(--text-color);
+    transition: background 500ms ease-in-out, color 200ms ease;
 }
 
+/*Flex grow gebruiken voor de ul li elementen*/
+
 nav {
-    background-color: blue;
+    background-color: var(--color-white);
     margin: 0;
     padding: 0;
     height: 68px;
@@ -69,11 +159,22 @@ nav ul li:nth-of-type(1) img {
     height: 100%;
 }
 
+nav ul li button {
+    width: fit-content;
+}
+
+nav ul li button p {
+    margin: 0;
+    font-size: 1em;
+    width: fit-content;
+}
+
 nav ul li a {
     width: 40px;
     height: 40px;
-    background-color: green;
-    display: block;
+    background-color: yellow;
+    display: flex;
+    padding: 0.5em;
 }
 
 nav ul li button {
@@ -146,6 +247,11 @@ main section:first-of-type ul {
 
 main section:first-of-type button {
     width: fit-content;
+    padding: 0.02em 1em;
+    border-radius: 2em;
+    border: 1em solid transparent;
+    background: #fff;
+    color: #111;
 }
 
 main section:nth-of-type(2) {
