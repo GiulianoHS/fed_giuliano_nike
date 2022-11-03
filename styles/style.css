@@ -1,3 +1,39 @@
+/******************/
+/*FONTS*/
+/*****************/
+
+@font-face {
+    font-family: 'helvetica_neueregular';
+    src: url('../fonts/helveticaneue-webfont.woff2') format('woff2'),
+    url('../fonts/helveticaneue-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helvetica_neuemedium_extended';
+    src: url('../fonts/helvetica_neue_medium_extended-webfont.woff2') format('woff2'),
+    url('../fonts/helvetica_neue_medium_extended-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futura_stdbold_condensed';
+    src: url('../fonts/futurastd-condensedbold-webfont.woff2') format('woff2'),
+    url('../fonts/futurastd-condensedbold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futura_stdXBdCn';
+    src: url('../fonts/futurastd-condensedextrabd-webfont.woff2') format('woff2'),
+    url('../fonts/futurastd-condensedextrabd-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -22,6 +58,7 @@ button, summary {
     --headerBg: #D9D9D9;
     --textColor: #0e0f0f;
     --bg: #ffffff;
+    --nav-bg: #F5F5F5;
 
     /*testing dark*/
     --color-mode: 'light';
@@ -167,12 +204,13 @@ nav ul li button p {
     margin: 0;
     font-size: 1em;
     width: fit-content;
+    font-family: 'helvetica_neuemedium_extended';
 }
 
 nav ul li a {
     width: 40px;
     height: 40px;
-    background-color: yellow;
+    /*background-color: yellow;*/
     display: flex;
     padding: 0.5em;
 }
@@ -180,11 +218,13 @@ nav ul li a {
 nav ul li button {
     height: 40px;
     width: 40px;
+    font-family: 'helvetica_neuemedium_extended';
+    font-size: 1em;
 }
 
 header section {
     height: 68px;
-    background-color: red;
+    background-color: var(--nav-bg);
     display: flex;
 }
 
@@ -205,11 +245,14 @@ header section ul li {
 
 header section ul li p {
     font-size: 16px;
+    font-family: 'helvetica_neuemedium_extended';
     line-height: 0;
 }
 
 header section ul li a {
     font-size: 12px;
+    font-family: 'helvetica_neuemedium_extended';
+    color: #000000;
 }
 
 main {
@@ -217,10 +260,10 @@ main {
 }
 
 main section:first-of-type {
-    background: gray;
+    /*background: gray;*/
     width: 100%;
     min-height: 480px;
-    padding: 1em;
+    /*padding: 1em;*/
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
@@ -230,11 +273,24 @@ main section:first-of-type {
 main section:first-of-type h2 {
     padding: 0;
     margin: 0;
+    font-family: 'futura_stdXBdCn';
+    text-transform: uppercase;
+    font-size: 48px;
+    letter-spacing: -0.03em;
+}
+
+main section:first-of-type video {
+    order: -2;
 }
 
 main section:first-of-type h3 {
     order: -1;
     margin: 0;
+    font-family: 'helvetica_neuemedium_extended';
+    color: #111111;
+    line-height: 1.5;
+    font-size: 1em;
+    font-weight: 500;
 }
 
 main section:first-of-type ul {
@@ -243,6 +299,7 @@ main section:first-of-type ul {
     display: flex;
     justify-content: flex-start;
     list-style: none;
+    gap: 0.5em
 }
 
 main section:first-of-type button {
@@ -252,6 +309,8 @@ main section:first-of-type button {
     border: 1em solid transparent;
     background: #fff;
     color: #111;
+    font-family: 'helvetica_neuemedium_extended';
+    font-size: 1em;
 }
 
 main section:nth-of-type(2) {
