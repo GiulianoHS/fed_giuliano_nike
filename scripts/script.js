@@ -1,6 +1,9 @@
 // JavaScript Document
 console.log("hi");
 
+// **********************
+// Gemaakt met behulp van https://piccalil.li/tutorial/create-a-user-controlled-dark-or-light-mode/
+// **********************
 
 document.documentElement.classList.remove('no-js');
 
