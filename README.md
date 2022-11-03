@@ -238,7 +238,34 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 </details>
 
+# Voortgang 4 (extra kans) (week 4)
 
+<details>
+  <summary>uitwerken voor 4e voortgang</summary>
+
+### Stand van zaken
+Op dit moment ben ik bezig met invoeren van de enable dark mode in mijn website. Op dit moment heb ik een tutorial gevogld, maar ik kan niet echt goed volgen hoe dit nu in zijn werking gaat. Ik wil dit goed begrijpen of een andere manier vinden om het toe te passen.
+
+
+### Agenda voor meeting
+samen met je groepje opstellen
+
+| student 1      |
+| Giuliano         |
+| Javascript dark/light mode, css | 
+| en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
+| ...            | ...             | ...          | ...              |
+
+
+### Verslag van meeting
+hier na afloop snel de uitkomsten van de meeting vastleggen
+
+- punt 1
+- punt 2
+- nog een punt
+- ...
+
+</details>
 
 
 
