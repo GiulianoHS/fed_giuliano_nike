@@ -18,12 +18,23 @@
 	<header>
 		<nav>
 			<ul>
-				<li><img src="images/svg/nike-logo.svg" alt="Swoosh logo of Nike"></li>
 				<li>
-					<button class="toggle-button js-mode-toggle">
-						<p class="toggle-button__text js-mode-toggle-text">dark</p>
-						<p class="toggle-button__icon" aria-hidden="true"></p>
-					</button></li>
+					<img class="hide" src="images/svg/ni" alt="Swoosh logo of Nike">
+					<img class="hide" src="images/svg/nike-logo-white.svg" alt="Swoosh logo of Nike">
+				</li>
+				<li>
+					<fieldset>
+						<legend>Kleurmode</legend>
+						<input type="radio" id="system-mode" name="color-mode" value="system-mode" checked>
+						<label for="system-mode">System</label>
+						<input type="radio" id="light-mode" name="color-mode" value="light-mode">
+						<label for="light-mode">Licht</label>
+						<input type="radio" id="dark-mode" name="color-mode" value="dark-mode">
+						<label for="dark-mode">Donker</label>
+<!--						<input type="radio" id="contrast-mode" name="color-mode" value="contrast-mode">-->
+<!--						<label for="contrast-mode">Contrast</label>-->
+					</fieldset>
+				</li>
 				<li><a href="#"><img src="images/svg/search-icon.svg" alt="Hier kan je op klikken om te zoeken naar het gewenste item"></a></li>
 				<li><a href="#"><img src="images/svg/basket-icon.svg" alt="Winkelmandje waar je producten in terecht komen"></a></li>
 				<li><button><img src="images/svg/menu-icon.svg" alt="Het menu icoontje waarmee je het menu kan openen"></button></li>

@@ -238,7 +238,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 </details>
 
-# Voortgang 4 (extra kans) (week 4)
+# Voonrtgang 4 (extra kas) (week 4)
 
 <details>
   <summary>uitwerken voor 4e voortgang</summary>
@@ -289,9 +289,6 @@ hier na afloop snel de uitkomsten van de meeting vastleggen
 
   <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
 </details>
-
-
-
 
 
 ## Bronnenlijst

@@ -1,72 +1,115 @@
 // JavaScript Document
-console.log("hi");
+console.log("Yes javascript werken jongen");
 
-// **********************
-// Gemaakt met behulp van https://piccalil.li/tutorial/create-a-user-controlled-dark-or-light-mode/
-// **********************
+// de default colorMode opzoeken
+// dat is value van de checked radio button in de html
+var colorMode = document.querySelector("input:checked").value;
 
-document.documentElement.classList.remove('no-js');
+// de default systeem voorkeuren bepalen
+// true of false
+var systemMoreContrast = window.matchMedia("(prefers-contrast: more)").matches;
+var systemDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-const STORAGE_KEY = 'user-color-scheme';
-const COLOR_MODE_KEY = '--color-mode';
+// de radio buttons
+const colorModeInputs = document.querySelectorAll("[type='radio']");
 
-const modeToggleButton = document.querySelector('.js-mode-toggle');
-const modeToggleText = document.querySelector('.js-mode-toggle-text');
-const modeStatusElement = document.querySelector('.js-mode-status');
 
-const getCSSCustomProp = propKey => {
-    let response = getComputedStyle(document.documentElement).getPropertyValue(propKey);
 
-    if (response.length) {
-        response = response.replace(/"/g, '').trim();
-    }
 
-    return response;
-};
 
-const applySetting = passedSetting => {
-    let currentSetting = passedSetting || localStorage.getItem(STORAGE_KEY);
+/********************************/
+/* bij het openen van de pagina */
+/********************************/
 
-    if (currentSetting) {
-        document.documentElement.setAttribute('data-user-color-scheme', currentSetting);
-        setButtonLabelAndStatus(currentSetting);
-    } else {
-        setButtonLabelAndStatus(getCSSCustomProp(COLOR_MODE_KEY));
-    }
-};
+// als de colorMode opgeslagen is in localstorage
+// de radio buttons en :root initialiseren op basis van de opgeslagen colorMode
+if( localStorage.getItem("colorMode") ) {
+    // de colorMode ophalen
+    colorMode = JSON.parse(localStorage.getItem("colorMode"));
 
-const setButtonLabelAndStatus = currentSetting => {
-    modeToggleText.innerText = `Enable ${
-        currentSetting === 'dark' ? 'light' : 'dark'
-    } mode`;
-    modeStatusElement.innerText = `Color mode is now "${currentSetting}"`;
-};
+    // de bijbehorende radio button opzoeken en aanzetten
+    let selectedRadioButton = document.querySelector("#"+colorMode);
+    selectedRadioButton.checked = true;
 
-const toggleSetting = () => {
-    let currentSetting = localStorage.getItem(STORAGE_KEY);
+    // :root updaten
+    updateColorModeOnRoot();
+}
 
-    switch (currentSetting) {
-        case null:
-            currentSetting = getCSSCustomProp(COLOR_MODE_KEY) === 'dark' ? 'light' : 'dark';
-            break;
-        case 'light':
-            currentSetting = 'dark';
-            break;
-        case 'dark':
-            currentSetting = 'light';
-            break;
-    }
 
-    localStorage.setItem(STORAGE_KEY, currentSetting);
 
-    return currentSetting;
-};
 
-modeToggleButton.addEventListener('click', evt => {
-    evt.preventDefault();
 
-    applySetting(toggleSetting());
+/**********************************************/
+/* als een van de radio buttons wordt gekozen */
+/**********************************************/
+colorModeInputs.forEach(colorModeInput => {
+    colorModeInput.addEventListener('change', radioChecked);
 });
 
-applySetting();
+function radioChecked() {
+    // de gekozen optie bepalen
+    let checkedColorMode = this.value;
 
+    // de gekozen optie opslaan in localstorage
+    localStorage.setItem("colorMode", JSON.stringify(checkedColorMode));
+
+    // global var setten
+    colorMode = checkedColorMode;
+
+    // :root updaten
+    updateColorModeOnRoot();
+}
+
+
+
+
+
+/******************************************************************/
+/* als de system prefers-color-scheme of prefers-contrast wijzigt */
+/******************************************************************/
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', (event) => {
+    // de nieuwe waarde opslaan
+    systemDarkMode = event.matches; // true or false
+
+    // :root updaten
+    updateColorModeOnRoot();
+});
+
+
+window.matchMedia("(prefers-contrast: more)").addEventListener('change', (event) => {
+    // de nieuwe waarde opslaan
+    systemMoreContrast = event.matches; // true or false
+
+    // :root updaten
+    updateColorModeOnRoot();
+});
+
+
+
+
+
+/****************************************/
+/* data-color-mode van de :root updaten */
+/****************************************/
+function updateColorModeOnRoot() {
+    // als licht of dark gekozen is
+    if (colorMode == "light-mode" || colorMode == "dark-mode" || colorMode == "contrast-mode") {
+        document.documentElement.dataset.colorMode = colorMode;
+    }
+        // als system is gekozen
+    // bepalen welke system optie relevant is
+    else {
+        // als more contrast is gekozen
+        if (systemMoreContrast) {
+            document.documentElement.dataset.colorMode = "contrast-mode";
+        }
+        // als dark mode is gekozen
+        else if (systemDarkMode) {
+            document.documentElement.dataset.colorMode = "dark-mode";
+        }
+        // anders blijft light mode over
+        else {
+            document.documentElement.dataset.colorMode = "light-mode";
+        }
+    }
+}

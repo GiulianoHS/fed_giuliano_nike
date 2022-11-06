@@ -59,18 +59,6 @@ button, summary {
     --textColor: #0e0f0f;
     --bg: #ffffff;
     --nav-bg: #F5F5F5;
-
-    /*testing dark*/
-    --color-mode: 'light';
-    --color-dark: #141414;
-    --color-dark-alpha: rgba(0, 0, 0, 0.1);
-    --color-light: #efefef;
-    --color-light-alpha: rgba(255, 255, 255, 0.9);
-    --background: #efefef;
-    --text-color: #141414;
-    --button-background: var(--color-dark);
-    --button-color: var(--color-light);
-    --border-color: var(--color-dark-alpha);
 }
 
 @media (prefers-color-scheme: light) {
@@ -85,72 +73,105 @@ button, summary {
     font-size: clamp();
 }
 
-/*.visually-hidden {*/
-/*    display: block;*/
-/*    height: 1px;*/
-/*    width: 1px;*/
-/*    overflow: hidden;*/
-/*    clip: rect(1px 1px 1px 1px);*/
-/*    clip: rect(1px, 1px, 1px, 1px);*/
-/*    clip-path: inset(1px);*/
-/*    white-space: nowrap;*/
-/*    position: absolute;*/
-/*}*/
-
-/*Dark scheme*/
-
-@media (prefers-color-scheme: dark) {
-    /*dark mode*/
-    :root {
-        --color-mode: 'dark';
-        --primary: black;
-        --headerBg: #0A0908;
-        --textColor: #EAE0D5;
-        --bg: #000000;
-    }
-
-    :root:not([data-user-color-scheme]) {
-        --background: var(--color-dark);
-        --text-color: var(--color-light);
-        --button-background: var(--color-light);
-        --button-color: var(--color-dark);
-        --border-color: var(--color-light-alpha);
-    }
-}
-
-[data-user-color-scheme='dark'] {
-    --background: var(--color-dark);
-    --text-color: var(--color-light);
-    --button-background: var(--color-light-alpha);
-    --button-color: var(--color-dark);
-    --border-color: var(--color-light-alpha);
-}
-
-.no-js .user-toggle {
-    display: none;
-}
-
-.user-toggle {
-    margin: 2rem auto 0 auto;
-    padding-top: 2.5rem;
-    max-width: 20rem;
-    border-top: 1px solid var(--border-color);
-    text-align: center;
-}
-
-.toggle-button {
-    /*display: inline-flex;*/
-    background: var(--button-background);
-    color: var(--button-color);
-    border: none;
-    font: inherit;
-    /*font-size: 1.5rem;*/
-    /*padding: 0.5rem 1rem;*/
-    transition: background 500ms ease-in-out, color 200ms ease;
-    width: fit-content;
-}
-
 /*Tokens*/
+
+/*************************/
+/* LIGHT / DEFAULT THEME */
+/*************************/
+:root {
+     /*general*/
+    --generalBackground: #ffffff;
+    --generalColor:DarkSlateGray;
+    --generalColorHigherContrast:Black;
+
+    --generalAccentColor:DodgerBlue;
+
+    --headingBackground:
+            linear-gradient(
+                    135deg,
+                    Black 25%,
+                    DarkMagenta 50%
+            );
+    --headingFontWeight:300;
+
+    /* header */
+    --headerBackground:
+            linear-gradient(
+                    135deg,
+                    #1E90FFaa 10%,
+                    #FF1493aa,
+                    #DC143Caa,
+                    #FFD700aa 90%
+            );
+
+    /*Nike logo*/
+    --logoColor: fill #000000;
+
+    /* card */
+    --cardBackground:linear-gradient(135deg, White 50%, DarkGray);
+    --cardBorder:none;
+    --cardBoxShadow:0 0 1em #666c;
+
+    /* image */
+    --imageBorder:solid .25em #9996;
+
+    /* button */
+    --buttonBackground:linear-gradient(135deg, DeepSkyBlue 25%, DodgerBlue 75%);
+    --buttonBoxShadowFocus:.25rem .25rem #0006;
+    --buttonColor:var(--generalColorHigherContrast);
+    --buttonFontWeight:300;
+
+    --buttonBackgroundActive:linear-gradient(135deg, DeepPink 25%, Crimson 75%);
+
+    --buttonBoxShadowActive:inset .25rem .25rem #0006;
+    --buttonColorActive:White;
+}
+
+
+
+
+
+/**************/
+/* DARK THEME */
+/**************/
+:root[data-color-mode="dark-mode"] {
+    /* general */
+    --generalBackground:
+            fixed repeating-linear-gradient(135deg, #2220, #222 2em) center top,
+            fixed repeating-linear-gradient(-135deg, #2220, #222 2em) center top,
+            linear-gradient(#444, #333);
+    --generalColor:Gainsboro;
+    /*--generalColorHigherContrast:White;*/
+
+    --headingBackground:
+            linear-gradient(
+                    135deg,
+                    White 25%,
+                    Orange 75%
+            );
+
+    /* header */
+    --headerBackground: grey;
+
+    --logoColor: fill #ffffff;
+
+    --labelBackground:#0008;
+
+    /* card */
+    --cardBackground:linear-gradient(135deg, #444 50%, #222);
+    --cardBoxShadow:0 0 1em #111c;
+
+    /* image */
+    --imageBrightness:.85;
+
+    /* button */
+    --buttonBackground:linear-gradient(135deg, SlateBlue 25%, DarkSlateBlue 75%);
+    --buttonColor:var(--generalColorHigherContrast);
+
+    --buttonBackgroundActive:linear-gradient(135deg, DarkMagenta 25%, DarkRed 75%);
+    --buttonColorActive:White;
+}
+
 
 /****************/
 /* JOUW STYLING */
@@ -161,14 +182,32 @@ button, summary {
 body {
     margin: 0;
     background: var(--background);
-    color: var(--text-color);
     transition: background 500ms ease-in-out, color 200ms ease;
+
+    color:var(--generalColor);
+    background:var(--generalBackground);
+
+    /* heeft nu alleen impact voor de check-box */
+    accent-color:var(--generalAccentColor);
+
+}
+
+h1, h2 {
+    /* jouw kleurtjes en styling */
+    background:var(--headingBackground);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    font-weight:var(--headingFontWeight);
 }
 
 /*Flex grow gebruiken voor de ul li elementen*/
 
 nav {
-    background-color: var(--color-white);
+    /*position: sticky;*/
+    /*top: 0;*/
+    background-color: var(--headerBackground);
     margin: 0;
     padding: 0;
     height: 68px;
@@ -263,11 +302,12 @@ main section:first-of-type {
     /*background: gray;*/
     width: 100%;
     min-height: 480px;
-    /*padding: 1em;*/
+    max-height: 50em;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
     flex: wrap;
+    overflow: hidden;
 }
 
 main section:first-of-type h2 {
@@ -354,6 +394,7 @@ main section:nth-of-type(3) h2 {
     display: flex;
     flex-direction: column;
     order: 0;
+    font-family: ;
 }
 
 main section:nth-of-type(3) h3 {
