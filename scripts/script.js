@@ -1,6 +1,9 @@
 // JavaScript Document
 console.log("Yes javascript werken jongen");
 
+
+// Javascript gekregen van Sanne en besproken
+
 // de default colorMode opzoeken
 // dat is value van de checked radio button in de html
 var colorMode = document.querySelector("input:checked").value;

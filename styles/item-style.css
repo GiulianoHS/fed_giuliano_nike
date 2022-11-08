@@ -2,25 +2,6 @@
 /*FONTS*/
 /*****************/
 
-svg {
-    width:4em;
-    height:4em;
-}
-
-
-.st0 {
-    fill:#ff0000;
-
-    filter: hue-rotate(90deg) brightness(2);
-}
-
-
-/*@media (prefers-color-scheme:dark ) {*/
-/*    .st0 {*/
-/*        fill:#ff6666;*/
-/*    }*/
-/*}*/
-
 @font-face {
     font-family: 'helvetica_neueregular';
     src: url('../fonts/helveticaneue-webfont.woff2') format('woff2'),
@@ -56,7 +37,7 @@ svg {
 @font-face {
     font-family: 'tradegothic_lt_condeighteenBd';
     src: url('../fonts/trade_gothic_lt_bold_condensed_no._20-webfont.woff2') format('woff2'),
-    url('../fonts/trade_gothic_lt_bold_condensed_no._20-webfont.woff') format('woff');
+    url('trade_gothic_lt_bold_condensed_no._20-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -65,11 +46,20 @@ svg {
 /* CSS REMEDY */
 /**************/
 *, *::after, *::before {
-  box-sizing:border-box;  
+    box-sizing:border-box;
 }
 
 button, summary {
-	cursor: pointer;
+    cursor: pointer;
+}
+
+fieldset {
+    border: none;
+}
+
+label {
+    font-family: 'helvetica_neueregular';
+    font-family: 'helvetica_neuemedium_extended';
 }
 
 /*********************/
@@ -97,7 +87,7 @@ button, summary {
     --secondTextColor: #424242;
     --bg: #ffffff;
 
-     /*general*/
+    /*general*/
     --generalBackground: #ffffff;
     --generalColor: #000000;
 
@@ -109,7 +99,7 @@ button, summary {
             );
     --headingFontWeight:300;
 
-     /*header*/
+    /*header*/
     --headerBackground:
             linear-gradient(
                     135deg,
@@ -147,7 +137,7 @@ button, summary {
 /* DARK THEME */
 /**************/
 :root[data-color-mode="dark-mode"] {
-     /*general*/
+    /*general*/
     --generalBackground: #000000;
     --generalColor: #FFFFFF;
     --secondTextColor: #757575;
@@ -206,16 +196,24 @@ h1, h2, h3 {
     color: var(--titleColor);
 }
 
+h1 {
+    font-family: 'helvetica_neuemedium_extended';
+}
+
+h2 {
+    font-family: 'helvetica_neuemedium_extended';
+}
+
 h2, h3 {
-    font-family: 'helvetica_neuemedium_extended', Helvetica;
+    font-family: 'helvetica_neuemedium_extended';
 }
 
 h4 {
-    font-family: 'helvetica_neuemedium_extended', Helvetica;
+    font-family: 'helvetica_neuemedium_extended';
 }
 
 p {
-    font-family: 'helvetica_neueregular', Helvetica;
+    font-family: 'helvetica_neueregular';
     color: var(--primarytextColor);
 }
 
@@ -226,7 +224,7 @@ button {
     border: 0.1em solid transparent;
     background: var(--buttonBackground);
     color: var(--buttonText);
-    font-family: 'helvetica_neuemedium_extended', Helvetica;
+    font-family: 'helvetica_neuemedium_extended';
     font-size: 1em;
 }
 
@@ -241,15 +239,6 @@ nav {
     height: 68px;
     display: flex;
     align-items: center;
-}
-
-fieldset {
-    border: none;
-}
-
-label {
-    font-family: 'helvetica_neueregular';
-    font-family: 'helvetica_neuemedium_extended';
 }
 
 .light-icon {
@@ -297,7 +286,6 @@ nav ul li button p {
 nav ul li a {
     width: 40px;
     height: 40px;
-    /*background-color: yellow;*/
     display: flex;
     padding: 0.5em;
 }
@@ -353,8 +341,6 @@ main {
 main section:first-of-type {
     /*background: gray;*/
     width: 100%;
-    min-height: 480px;
-    max-height: 50em;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
@@ -362,12 +348,15 @@ main section:first-of-type {
     overflow: hidden;
 }
 
+main section:first-of-type p {
+    font-family: 'helvetica_neuemedium_extended';
+}
+
 main section:first-of-type h2 {
     padding: 0;
     margin: 0;
-    font-family: 'futura_stdXBdCn';
-    text-transform: uppercase;
-    font-size: 48px;
+    text-transform: inherit;
+    font-size: 1em;
     letter-spacing: -0.03em;
 }
 
@@ -391,7 +380,10 @@ main section:first-of-type ul {
     display: flex;
     justify-content: flex-start;
     list-style: none;
-    gap: 0.5em
+    gap: 1em;
+    scroll-snap-type: inline mandatory;
+    scroll-behavior: smooth;
+    overflow: scroll;
 }
 
 main section:first-of-type button {
@@ -409,45 +401,61 @@ main section:nth-of-type(2) {
     margin: 6em 0 0 0;
 }
 
-main section:nth-of-type(2) ul a {
-    text-decoration: none;
-}
-
-main section:nth-of-type(2) ul {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    gap: 1em;
-    scroll-snap-type: inline mandatory;
-    scroll-behavior: smooth;
-    overflow: scroll;
-}
-
-main section:nth-of-type(2) ul li {
+main section:nth-of-type ul li {
     /*flex-basis: 80%;*/
     flex-shrink: 0;
     /*scroll-snap-align: center;*/
 }
 
-main section:nth-of-type(2) ul li img {
+main section:nth-of-type ul li img {
     display: block;
     width: 100%;
     max-height: 22em;
 }
 
-main section:nth-of-type(2) ul li p {
-    width: 100%;
+main section:nth-of-type(2) h2 {
+    font-size: 1.2em;
 }
 
-/*main section:nth-of-type(2) p:nth-of-type(2) {*/
-/*    color:*/
-/*}*/
+main section:nth-of-type(2) h2:nth-of-type(1) {
+    float: left;
+    width: 80%
+}
+
+main section:nth-of-type(2) h2:nth-of-type(2) {
+    float: right;
+    color: #757575;
+    width: 20%;
+}
+
+main section:nth-of-type(2) {
+    padding: 0;
+}
+
+main section:nth-of-type(2) ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4em
+}
+
+main section:nth-of-type(2) ul li button {
+    width: 100%;
+    background: white;
+    border: 1px solid #0b0b0b;
+    color: black;
+    border-radius: 1px;
+}
+
+/*Hieronder nog CSS van homepagina*/
+
+/*duidelijker*/
 
 main section:nth-of-type(3) {
-    margin: 6em 0 0 0;
+    margin: 0 0 0 0;
     display: flex;
     flex-direction: column;
+    list-style: none;
 }
 
 main section:nth-of-type(3) h2 {
@@ -639,7 +647,7 @@ footer section:nth-of-type(2) ul:nth-of-type(4) {
 }
 
 footer section:nth-of-type(2) ul:nth-of-type(4) li a img {
-   padding-top: 0.2em;
+    padding-top: 0.2em;
     margin: 0 1em 0 0;
 }
 
@@ -673,7 +681,4 @@ footer section:nth-of-type(2) ul:nth-of-type(4) li a {
     color: #7e7e7e;
 }
 
-/******************/
-/*STYLING PAGE 2*/
-/********************/
 
